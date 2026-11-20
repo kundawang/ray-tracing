@@ -107,14 +107,14 @@ func randomScene() *HitterList {
 					world.Add(&Sphere{new(HitRecord), center, 0.2, sphereMaterial})
 				} else {
 					// Glass.
-					sphereMaterial := &Dielectric{1.5}
+					sphereMaterial := NewDielectric(1.5, nil)
 					world.Add(&Sphere{new(HitRecord), center, 0.2, sphereMaterial})
 				}
 			}
 		}
 	}
 
-	material1 := &Dielectric{1.5}
+	material1 := NewDielectric(1.5, nil)
 	world.Add(&Sphere{new(HitRecord), &Point3{0, 1, 0}, 1.0, material1})
 
 	material2 := &Lambertian{&Color{0.4, 0.2, 0.1}}
